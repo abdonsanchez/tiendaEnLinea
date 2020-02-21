@@ -15,4 +15,9 @@
 //     return view('welcome');
 // });
 
-Route::get('/', 'storeController@index');
+Route::get('/', ['as'=>'home','uses'=>'storeController@index']);
+
+Route::get('product/{slug}',[
+  'as' => 'product-detail',
+  'uses' => 'storeController@show'
+]);
